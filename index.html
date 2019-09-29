@@ -10,6 +10,16 @@
     function sendData() {
       var email = $('input[name="email"]').val();
       var notes = $('textarea[name="notes"]').val();
+      postData("https://internetgestapo.net/submit", {"email": email, "notes": notes})
+            .then(function (response) {
+                if(!response.ok){
+                    document.getElementById('message').innerHTML = "System error. Please try again later. HTTP Status =" + response.status;
+                }
+                return response.json()
+            })
+            .then(function (json) {
+                print(json)
+            })
     }
   </script>
 </head>
