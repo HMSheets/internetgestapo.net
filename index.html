@@ -9,7 +9,7 @@
     function sendData() {
       var email = document.getElementById("email").innerText
       var notes = document.getElementById("notes").innerText
-      postData("http://localhost:6303/submit", {"email": email, "notes": notes})
+      postData("http://internetgestapo.net/submit", {"email": email, "notes": notes})
             .then(function (response) {
                 if(!response.ok){
                   console.log("failure for some reason")
