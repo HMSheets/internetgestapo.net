@@ -24,12 +24,13 @@ class RequestHandler(BaseHTTPRequestHandler):
         if "submit" in self.path:
             current_date = datetime.datetime.utcnow().strftime("%Y-%m-%dT-%H.%M.%S%z")
             try:
-                os.mkdir("submissions")
+                os.mkdir(os.path.join(os.path.dirname(os.path.realpath(__file__)),"submissions"))
             except:
                 pass
 
             try:
-                f = open(os.path.join("submissions", str(current_date)+".txt"), "w+")
+                path = os.path.join(os.path.dirname(os.path.realpath(__file__)),"submissions")
+                f = open(os.path.join(path, str(current_date)+".txt"), "w+")
                 f.write(values["email"]+"\n"+values["notes"]+"\n")
                 response = json.dumps({"result": "success!"}).encode()
                 f.close()
