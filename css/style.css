@@ -110,6 +110,7 @@ Imports and tools --------------------------------------------------------------
     margin: 1em 0 1em;
   }
   input,
+  button,
   textarea {
     width: 100%;
     margin-bottom: 1em;
@@ -130,14 +131,14 @@ Imports and tools --------------------------------------------------------------
   #password {
     border-radius: 0 0 .3em .3em;
   }
-  input[type=submit] {
+  button[type=submit] {
     background: #3D6ED6;
     color: #fff;
     cursor: pointer;
   }
-  input[type=submit]:hover,
-  input[type=submit]:focus,
-  input[type=submit]:active {
+  button[type=submit]:hover,
+  button[type=submit]:focus,
+  button[type=submit]:active {
     background: #2F59B1;
   }
   .complaint {
