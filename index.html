@@ -5,27 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <link rel="stylesheet" type="text/css" href="css/style.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript">
     function sendData() {
-      var email = $('input[name="email"]').val();
-      var notes = $('textarea[name="notes"]').val();
-      postData("http://localhost:6303/submit", {"email": email, "notes": notes})
+      var email = document.getElementById("email").innerText
+      var notes = document.getElementById("notes").innerText
+      postData("https://internetgestapo.net/submit", {"email": email, "notes": notes})
             .then(function (response) {
                 if(!response.ok){
-                    document.getElementById('message').innerHTML = "System error. Please try again later. HTTP Status =" + response.status;
+                  console.log("failure for some reason")
                 }
                 return response.json()
             })
             .then(function (json) {
-                print(json)
+              console.log("fuck you too.")
+              window.location.href = "index2.html"
             })
     }
 
     function postData(url = ``, data = {}) {
       return fetch(url, {
           method: "POST", // *GET, POST, PUT, DELETE, etc.
-          mode: "cors", // no-cors, cors, *same-origin
+          mode: "no-cors", // no-cors, cors, *same-origin
           cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
           headers: {
               "Content-Type": "application/json",
@@ -36,7 +36,7 @@
     }
   </script>
 </head>
-<body>
+<body onClick="print()">
 
 <div class="container" id="container">
   <img alt="Internet-Gestapo" class="logo" src="images/internet_gestapo-logo-web.png">
