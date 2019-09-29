@@ -131,14 +131,14 @@ Imports and tools --------------------------------------------------------------
   #password {
     border-radius: 0 0 .3em .3em;
   }
-  button[type=submit] {
+  button[type=button] {
     background: #3D6ED6;
     color: #fff;
     cursor: pointer;
   }
-  button[type=submit]:hover,
-  button[type=submit]:focus,
-  button[type=submit]:active {
+  button[type=button]:hover,
+  button[type=button]:focus,
+  button[type=button]:active {
     background: #2F59B1;
   }
   .complaint {
