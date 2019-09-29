@@ -11,7 +11,7 @@ class RequestHandler(BaseHTTPRequestHandler):
     def do_OPTIONS(self):
         self.send_response(200, "ok")
         self.send_header('Access-Control-Allow-Credentials', 'true')
-        self.send_header('Access-Control-Allow-Origin', 'https://internetgestapo.com')
+        self.send_header('Access-Control-Allow-Origin', 'https://internetgestapo.net')
         self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
         self.send_header("Access-Control-Allow-Headers", "X-Requested-With, Content-type")
         self.end_headers()
