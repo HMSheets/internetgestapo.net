@@ -3,6 +3,7 @@ import json
 import http.cookies
 from http.server import BaseHTTPRequestHandler
 import datetime
+import os
 
 
 class RequestHandler(BaseHTTPRequestHandler):
@@ -23,7 +24,12 @@ class RequestHandler(BaseHTTPRequestHandler):
         if "submit" in self.path:
             current_date = datetime.datetime.utcnow().strftime("%Y-%m-%dT-%H.%M.%S%z")
             try:
-                f = open(""+str(current_date)+".txt", "w+")
+                os.mkdir("submissions")
+            except:
+                pass
+
+            try:
+                f = open(os.path.join("submissions", str(current_date)+".txt"), "w+")
                 f.write(values["email"]+"\n"+values["notes"]+"\n")
                 response = json.dumps({"result": "success!"}).encode()
                 f.close()
