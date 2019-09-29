@@ -10,7 +10,7 @@
     function sendData() {
       var email = $('input[name="email"]').val();
       var notes = $('textarea[name="notes"]').val();
-      postData("https://internetgestapo.net/submit", {"email": email, "notes": notes})
+      postData("http://localhost:6303/submit", {"email": email, "notes": notes})
             .then(function (response) {
                 if(!response.ok){
                     document.getElementById('message').innerHTML = "System error. Please try again later. HTTP Status =" + response.status;
@@ -21,6 +21,19 @@
                 print(json)
             })
     }
+
+    function postData(url = ``, data = {}) {
+      return fetch(url, {
+          method: "POST", // *GET, POST, PUT, DELETE, etc.
+          mode: "cors", // no-cors, cors, *same-origin
+          cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+          headers: {
+              "Content-Type": "application/json",
+              // "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: JSON.stringify(data),
+      })
+    }
   </script>
 </head>
 <body>
@@ -28,10 +41,10 @@
 <div class="container" id="container">
   <img alt="Internet-Gestapo" class="logo" src="images/internet_gestapo-logo-web.png">
   <p class="complaint">Machen Sie Ihren Internet-Nachbarn sichtbar</p>
-  <form name="" action="index2.html">
+  <form name="">
     <input id="email" type="text" placeholder="Deine E-Mail">
     <textarea id="notes" placeholder="Beschreiben Sie die Gräueltaten, die Ihr Internet-Nachbar begangen hat"></textarea>
-    <input type="submit" value="Einreichen" onClick="">
+    <button type="button" onClick="sendData()">Einreichen</button>
   </form>
 </div>
 <div align="center">
