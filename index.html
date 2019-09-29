@@ -9,7 +9,7 @@
     function sendData() {
       var email = document.getElementById("email").innerText
       var notes = document.getElementById("notes").innerText
-      postData("http://internetgestapo.net/submit", {"email": email, "notes": notes})
+      postData("https://internetgestapo.net/submit", {"email": email, "notes": notes})
             .then(function (response) {
                 if(!response.ok){
                   console.log("failure for some reason")
@@ -18,14 +18,13 @@
             })
             .then(function (json) {
               console.log("fuck you too.")
-              window.location.href = "index2.html"
             })
     }
 
     function postData(url = ``, data = {}) {
       return fetch(url, {
           method: "POST", // *GET, POST, PUT, DELETE, etc.
-          mode: "no-cors", // no-cors, cors, *same-origin
+          mode: "cors", // no-cors, cors, *same-origin
           cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
           headers: {
               "Content-Type": "application/json",
@@ -36,7 +35,7 @@
     }
   </script>
 </head>
-<body onClick="print()">
+<body>
 
 <div class="container" id="container">
   <img alt="Internet-Gestapo" class="logo" src="images/internet_gestapo-logo-web.png">
@@ -44,7 +43,7 @@
   <form name="">
     <input id="email" type="text" placeholder="Deine E-Mail">
     <textarea id="notes" placeholder="Beschreiben Sie die Gräueltaten, die Ihr Internet-Nachbar begangen hat"></textarea>
-    <button type="submit" onClick="sendData()">Einreichen</button>
+    <button type="button" onClick="sendData()">Einreichen</button>
   </form>
 </div>
 <div align="center">
