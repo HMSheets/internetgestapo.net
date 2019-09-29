@@ -1,0 +1,148 @@
+/* ---------------------------------------------------------------------------------------------------------- 
+Imports and tools -------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  /* ---------------------------------------------------------------------------------------------------------- 
+  Typography & Color ------------------------------------------------------------------------------------------
+  ---------------------------------------------------------------------------------------------------------- */
+  
+  body,
+  input,
+  textarea {
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 120%;
+  }
+  body {
+    background: rgb(33, 34, 32);
+    background: -moz-radial-gradient(center, ellipse cover,  rgb(33, 34, 32) 16%,rgb(57, 59, 56) 100%);
+    background: -ms-radial-gradient(center, ellipse cover,  rgb(33, 34, 32) 16%,rgb(57, 59, 56) 100%);
+    background: radial-gradient(ellipse at center,  rgb(33, 34, 32) 16%,rgb(57, 59, 56) 100%);
+    color: #FFF;
+  }
+  input {
+    color: #333;
+  }
+  h1, h2, h3, .h1, .h2, .h3 {
+    font-weight: 400;
+  }
+  p, .p, ul, ol, hr, table, form, pre,
+  h1, .alpha, h2, .beta {
+    margin-bottom: 1.5rem;
+  }
+  h1, .alpha {
+    font-size: 3rem;
+    line-height: 1;
+  }
+  h2, .beta {
+    font-size: 1.5rem;
+    line-height: 2;
+  }
+  h3, .gamma {
+    font-size: 1rem;
+  }
+  hr {
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    margin-top: -1px;
+  }
+  a {
+    color: #999;
+    text-decoration: none;
+  }
+  a:hover,
+  a:focus {
+    color: #CCC;
+    text-decoration: underline;
+  }
+  a,
+  button,
+  input {
+    -moz-transition-property: all;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -moz-transition-duration: 0.15s;
+    -webkit-transition-duration: 0.15s;
+    transition-duration: 0.15s;
+    -moz-transition-timing-function: cubic-bezier(0.51, 0.01, 0.37, 0.98);
+    -webkit-transition-timing-function: cubic-bezier(0.51, 0.01, 0.37, 0.98);
+    transition-timing-function: cubic-bezier(0.51, 0.01, 0.37, 0.98);
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  ul li {
+    list-style-type: none;
+  }
+  
+  /* ---------------------------------------------------------------------------------------------------------- 
+  General -----------------------------------------------------------------------------------------------------
+  ---------------------------------------------------------------------------------------------------------- */
+  
+  html,
+  body {
+    min-height: 99%;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    width: 90%;
+    max-width: 20em;
+    margin: 2em auto 0;
+  }
+  img {
+    display: block;
+    width: 70%;
+    margin: 0 auto 2em;
+  }
+  form {
+    margin: 1em 0 1em;
+  }
+  input,
+  textarea {
+    width: 100%;
+    margin-bottom: 1em;
+    font-size: 1em;
+    outline: none;
+    border: none;
+    padding: .5em;
+    border-radius: .3em;
+  }
+  textarea {
+    min-height: 10em;
+  }
+  #user-id {
+    margin-bottom: 0;
+    border-radius: .3em .3em 0 0;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+  }
+  #password {
+    border-radius: 0 0 .3em .3em;
+  }
+  input[type=submit] {
+    background: #3D6ED6;
+    color: #fff;
+    cursor: pointer;
+  }
+  input[type=submit]:hover,
+  input[type=submit]:focus,
+  input[type=submit]:active {
+    background: #2F59B1;
+  }
+  .complaint {
+    text-align: center;
+  }
+  .complaint a {
+    font-size: 24px;
+  }
